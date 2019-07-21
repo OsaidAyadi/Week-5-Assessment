@@ -12,9 +12,11 @@ Ex:  hello(null) => null
 
 */
 
-function hello() {
-  // WRITE YOUR CODE UNDER THIS LINE  
-
+function hello(name) {
+if (name==="")
+return null;
+else
+return "Hello " + name;
 }
 
 
@@ -32,8 +34,11 @@ Ex: calculateTax(100,0.15)
 => "You got 100 JD from sales, you should pay 15 JD for tax and you will have 85 JD as net sales."
 */
 
-function calculateTax() {
-  // WRITE YOUR CODE UNDER THIS LINE 
+function calculateTax(sales,tax) {
+
+  var tTax = (sales*tax);
+  return "You got " + sales + " JD from sales, you should pay " + tTax + " JD for tax and you will have " + (sales-tTax) + " JD as net sales."
+
 
 }
 
@@ -52,8 +57,36 @@ Ex: repeatChar("a",2); => "a, A"
 Ex: repeatChar("C",5); => "C, c, C, c, C"
 */
 
-function repeatChar() {
-  // WRITE YOUR CODE UNDER THIS LINE         
+function repeatChar(str,num) {
+
+  var capital = (str.toUpperCase());
+  var small = (str.toLowerCase());
+
+  var out ="";
+while (num !== 0) {
+
+
+  if (num === 1) {
+    out+= capital ;
+    num--;
+  }
+
+
+else if (num%2 !==0) {
+  out+= capital + ", ";
+  num--;
+}
+
+else {out+= small + ", ";
+num--;
+}
+
+
+
+
+}
+
+return out;
 
 }
 
@@ -71,9 +104,18 @@ Ex: stringToCapital("My Name Is: Alex !")
 Ex: stringToCapital("Are you a student in coding ACADEMY by ORANGE ?") 
 => "ARE YOU A STUDENT IN CODING ACADEMY BY ORANGE ?"
 */
+var x = 0;
+function stringToCapital(str) {
 
-function stringToCapital() {
-  // WRITE YOUR CODE UNDER THIS LINE         
+
+  if (x ===1) {
+    return str;
+  }
+  return (x++, stringToCapital (str.toUpperCase())) ;
+
+ 
+
+
 
 }
 
